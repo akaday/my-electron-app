@@ -1,3 +1,9 @@
+const { ipcMain, Notification } = require('electron');
+
+ipcMain.on('notify', (_, message) => {
+  new Notification({ title: 'Notification', body: message }).show();
+});
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
